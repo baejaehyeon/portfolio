@@ -8,3 +8,6 @@ Java, HTML5, CSS3, JSP, Javascript, React JS, Zustand, REST API, Spring Boot, My
 
 # 포릍폴리오 사이트 
 https://baejaehyeon.github.io/portfolio/
+
+# 스네이크 게임
+https://baejaehyeon.github.io/portfolio/snake-game.html
