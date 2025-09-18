@@ -4,4 +4,4 @@
 
 # 기술스택 
 
-Java, HTML5, CSS3, JSP, Javascript, React JS, Spring Boot, Mybatis Framework, Oracle
+Java, HTML5, CSS3, JSP, Javascript, React JS, Zustand, REST API, Spring Boot, Mybatis Framework, Oracle, Apache Tomcat, WebLogic
