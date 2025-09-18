@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Developer Portfolio - 웹, 인공지능 개발 전문가</title>
+    <meta name="description" content="웹 개발과 인공지능 분야의 전문가, Java, React, Spring Boot를 활용한 혁신적인 솔루션을 개발합니다" />
+    <meta name="author" content="AI Developer" />
+    <meta name="keywords" content="AI Developer, 웹 개발, 인공지능, Java, React, Spring Boot, 포트폴리오" />
+
+    <meta property="og:title" content="AI Developer Portfolio - 웹, 인공지능 개발 전문가" />
+    <meta property="og:description" content="웹 개발과 인공지능 분야의 전문가, Java, React, Spring Boot를 활용한 혁신적인 솔루션을 개발합니다" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <style>
+      :root {
+        --background: hsl(210, 20%, 8%);
+        --foreground: hsl(210, 40%, 98%);
+        --card: hsl(210, 15%, 12%);
+        --card-foreground: hsl(210, 40%, 98%);
+        --primary: hsl(217, 91%, 60%);
+        --primary-foreground: hsl(210, 20%, 8%);
+        --secondary: hsl(263, 70%, 50%);
+        --secondary-foreground: hsl(210, 40%, 98%);
+        --muted: hsl(210, 15%, 15%);
+        --muted-foreground: hsl(210, 20%, 70%);
+        --accent: hsl(280, 100%, 70%);
+        --accent-foreground: hsl(210, 20%, 8%);
+        --border: hsl(210, 15%, 20%);
+        --input: hsl(210, 15%, 20%);
+        --ring: hsl(217, 91%, 60%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Hero Section Styles */
+      .hero-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(263, 70%, 50%) 50%, hsl(280, 100%, 70%) 100%);
+        opacity: 0.1;
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      .floating-element {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(40px);
+        animation: bounce 3s ease-in-out infinite;
+      }
+
+      .floating-1 {
+        top: 5rem;
+        left: 2.5rem;
+        width: 5rem;
+        height: 5rem;
+        background-color: hsl(217, 91%, 60%, 0.2);
+        animation-delay: 1s;
+      }
+
+      .floating-2 {
+        bottom: 5rem;
+        right: 2.5rem;
+        width: 8rem;
+        height: 8rem;
+        background-color: hsl(263, 70%, 50%, 0.2);
+        animation-delay: 0.5s;
+      }
+
+      .floating-3 {
+        top: 50%;
+        right: 5rem;
+        width: 4rem;
+        height: 4rem;
+        background-color: hsl(280, 100%, 70%, 0.2);
+      }
+
+      .hero-content {
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        max-width: 64rem;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(263, 70%, 50%) 50%, hsl(280, 100%, 70%) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--muted-foreground);
+        margin-bottom: 2rem;
+        font-weight: 500;
+      }
+
+      .hero-description {
+        font-size: 1.125rem;
+        color: var(--muted-foreground);
+        margin-bottom: 3rem;
+        max-width: 32rem;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+      }
+
+      .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(263, 70%, 50%));
+        color: white;
+        box-shadow: 0 0 40px hsl(217, 91%, 60%, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 60px hsl(217, 91%, 60%, 0.4);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--foreground);
+        border: 1px solid hsl(217, 91%, 60%, 0.5);
+      }
+
+      .btn-outline:hover {
+        background-color: hsl(217, 91%, 60%, 0.1);
+      }
+
+      .scroll-indicator {
+        animation: bounce 2s infinite;
+      }
+
+      .scroll-bar {
+        width: 0.25rem;
+        height: 4rem;
+        background: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(263, 70%, 50%));
+        border-radius: 9999px;
+        margin: 0 auto;
+        opacity: 0.5;
+      }
+
+      /* Skills Section Styles */
+      .skills-section {
+        padding: 5rem 0;
+        position: relative;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(263, 70%, 50%) 50%, hsl(280, 100%, 70%) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .section-description {
+        font-size: 1.125rem;
+        color: var(--muted-foreground);
+        max-width: 32rem;
+        margin: 0 auto;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 72rem;
+        margin: 0 auto;
+      }
+
+      .skill-card {
+        background-color: hsl(210, 15%, 12%, 0.5);
+        backdrop-filter: blur(10px);
+        border: 1px solid hsl(210, 15%, 20%, 0.5);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .skill-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px -10px hsl(210, 20%, 8%, 0.5);
+        border-color: hsl(217, 91%, 60%, 0.3);
+      }
+
+      .skill-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .skill-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .skill-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--foreground);
+        margin-bottom: 0.5rem;
+      }
+
+      .skill-divider {
+        height: 0.25rem;
+        width: 4rem;
+        margin: 0 auto;
+        border-radius: 9999px;
+      }
+
+      .gradient-primary {
+        background: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(263, 70%, 50%));
+      }
+
+      .gradient-secondary {
+        background: linear-gradient(135deg, hsl(263, 70%, 50%), hsl(280, 100%, 70%));
+      }
+
+      .skill-technologies {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .tech-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .tech-badge {
+        background-color: hsl(210, 15%, 15%, 0.5);
+        color: var(--foreground);
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+      }
+
+      .tech-badge:hover {
+        background-color: hsl(210, 15%, 15%);
+      }
+
+      .experience-section {
+        margin-top: 5rem;
+        text-align: center;
+      }
+
+      .experience-card {
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 2rem;
+        background: linear-gradient(135deg, hsl(217, 91%, 60%, 0.05), hsl(263, 70%, 50%, 0.05));
+        border: 1px solid hsl(217, 91%, 60%, 0.2);
+        border-radius: 0.75rem;
+      }
+
+      .experience-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--foreground);
+      }
+
+      .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        text-align: left;
+      }
+
+      .experience-item h4 {
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .experience-item p {
+        color: var(--muted-foreground);
+        font-size: 0.875rem;
+      }
+
+      /* Animations */
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+
+      @keyframes bounce {
+        0%, 20%, 53%, 80%, 100% {
+          transform: translate3d(0, 0, 0);
+        }
+        40%, 43% {
+          transform: translate3d(0, -10px, 0);
+        }
+        70% {
+          transform: translate3d(0, -5px, 0);
+        }
+        90% {
+          transform: translate3d(0, -2px, 0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (min-width: 768px) {
+        .hero-title {
+          font-size: 4rem;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.5rem;
+        }
+        
+        .section-title {
+          font-size: 3rem;
+        }
+        
+        .hero-buttons {
+          flex-direction: row;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero-title {
+          font-size: 4.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="min-h-screen">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <!-- Animated background gradient -->
+        <div class="hero-bg"></div>
+        
+        <!-- Floating elements -->
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+        <div class="floating-element floating-3"></div>
+        
+        <div class="container">
+          <div class="hero-content">
+            <!-- Main title with gradient text -->
+            <h1 class="hero-title">
+              AI Developer Portfolio
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="hero-subtitle">
+              웹, 인공지능 개발 전문가
+            </p>
+            
+            <!-- Description -->
+            <p class="hero-description">
+              최신 기술 스택을 활용하여 혁신적인 웹 애플리케이션과 AI 솔루션을 개발합니다. 
+              사용자 중심의 인터페이스와 효율적인 백엔드 시스템 구축에 전문성을 가지고 있습니다.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="hero-buttons">
+              <a href="mailto:" class="btn btn-primary">
+                ✉️ 연락하기
+              </a>
+              <a href="#" class="btn btn-outline">
+                🔗 GitHub
+              </a>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator">
+              <div class="scroll-bar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="skills-section">
+        <div class="container">
+          <!-- Section header -->
+          <div class="section-header">
+            <h2 class="section-title">
+              기술 스택
+            </h2>
+            <p class="section-description">
+              다양한 기술을 활용하여 풀스택 개발과 AI 솔루션 구현이 가능합니다
+            </p>
+          </div>
+
+          <!-- Skills grid -->
+          <div class="skills-grid">
+            <!-- Frontend Skills -->
+            <div class="skill-card">
+              <div class="skill-header">
+                <div class="skill-icon">🎨</div>
+                <h3 class="skill-title">Frontend</h3>
+                <div class="skill-divider gradient-primary"></div>
+              </div>
+              <div class="skill-technologies">
+                <div class="tech-item">
+                  <span class="tech-badge">HTML5</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-badge">CSS3</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-badge">JavaScript</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-badge">React JS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Backend Skills -->
+            <div class="skill-card">
+              <div class="skill-header">
+                <div class="skill-icon">⚙️</div>
+                <h3 class="skill-title">Backend</h3>
+                <div class="skill-divider gradient-secondary"></div>
+              </div>
+              <div class="skill-technologies">
+                <div class="tech-item">
+                  <span class="tech-badge">Java</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-badge">Spring Boot</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-badge">JSP</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Database Skills -->
+            <div class="skill-card">
+              <div class="skill-header">
+                <div class="skill-icon">🗄️</div>
+                <h3 class="skill-title">Database</h3>
+                <div class="skill-divider gradient-primary"></div>
+              </div>
+              <div class="skill-technologies">
+                <div class="tech-item">
+                  <span class="tech-badge">Oracle</span>
+                </div>
+                <div class="tech-item">
+                  <span class="tech-badge">Mybatis Framework</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience highlight -->
+          <div class="experience-section">
+            <div class="experience-card">
+              <h3 class="experience-title">전문 분야</h3>
+              <div class="experience-grid">
+                <div class="experience-item">
+                  <h4>웹 개발</h4>
+                  <p>React와 Spring Boot를 활용한 현대적인 풀스택 웹 애플리케이션 개발</p>
+                </div>
+                <div class="experience-item">
+                  <h4>AI 솔루션</h4>
+                  <p>인공지능 기술을 접목한 혁신적인 서비스와 자동화 솔루션 개발</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
